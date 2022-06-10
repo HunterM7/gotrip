@@ -5,6 +5,7 @@
 
 $Primary1: #FF7B4E;
 $Primary2: #FF584E;
+$PrimaryLight: #FFBDA7;
 $Secondary1: #428E5F;
 $Secondary2: #112120;
 $Gold: #FFD336;
@@ -85,6 +86,7 @@ h2 {
 }
 
 .container {
+	width: 100%;
 	max-width: 1280px;
 	padding: 0 20px;
 	margin: 0 auto;
@@ -94,6 +96,8 @@ h2 {
 
 .main {
 	flex-grow: 1;
+
+	margin-bottom: 106px;
 }
 
 //* == Header ==
@@ -105,15 +109,27 @@ h2 {
 
 	z-index: 100;
 
-	&__container {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
+	&__container {}
+
+	&__common-links {}
 
 	&__logo {}
 
 	&__nav {}
+}
+
+//* == Common links ==
+
+.common-links {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__logo {}
+
+	&__nav {}
+
+	&__sign {}
 }
 
 //* == Logo ==
@@ -122,6 +138,10 @@ h2 {
 	font-size: 20px;
 	font-weight: 700;
 	color: $White;
+
+	&--orange {
+		color: $Primary1;
+	}
 }
 
 //* == Nav ==
@@ -170,6 +190,10 @@ h2 {
 				opacity: 1;
 			}
 		}
+
+		&--gray {
+			color: rgba($Black, 0.5);
+		}
 	}
 }
 
@@ -191,6 +215,10 @@ h2 {
 
 			border-radius: 100px;
 			background: $PrimaryGradient;
+		}
+
+		&--gray {
+			color: rgba($Black, 0.5);
 		}
 	}
 }
@@ -382,6 +410,7 @@ h2 {
 //* == Feedback ==
 
 .feedback {
+	margin-bottom: 230px;
 
 	&__container {
 		display: flex;
@@ -421,18 +450,7 @@ h2 {
 	&__rating {}
 }
 
-.author {
-
-		&__info {}
-
-		&__name {}
-
-		&__region {}
-}
-.feedback {
-
-		&__author {}
-}
+//* == Author ==
 
 .author {
 	display: flex;
@@ -469,6 +487,8 @@ h2 {
 	}
 }
 
+//* == Rating ==
+
 .rating {
 	display: flex;
 	flex-direction: row;
@@ -487,7 +507,129 @@ h2 {
 		}
 
 		&:not(:last-of-type) {
-			margin-right: 18px;
+			margin-right: 22px;
 		}
 	}
+}
+
+//* == Discount ==
+
+.discount {
+	margin-bottom: 134px;
+
+	&__container {}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		position: relative;
+
+		text-align: center;
+
+		padding: 116px 0;
+
+		border-radius: 60px;
+		background: $White;
+
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			width: 64px;
+			height: 84px;
+
+			position: absolute;
+
+			background: $PrimaryLight;
+
+			mask: url('../img/part-2.svg') center / contain no-repeat;
+		}
+
+		&::before {
+			left: 74px;
+			bottom: 56px;
+
+			transform: rotate(180deg);
+		}
+
+		&::after {
+			top: 74px;
+			right: 80px;
+		}
+	}
+
+	&__title {
+		max-width: 520px;
+
+		margin-bottom: 30px;
+	}
+
+	&__text {
+		font-size: 30px;
+		font-weight: 400;
+
+		max-width: 720px;
+
+		margin-bottom: 60px;
+	}
+
+	&__btn {}
+}
+
+//* == Subscribe ==
+
+.subscribe {
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__title {
+		max-width: 510px;
+
+		margin-bottom: 60px;
+
+		text-align: center;
+	}
+
+	&__mailbox {}
+}
+
+//* == Mailbox ==
+
+.mailbox {
+	width: 100%;
+	max-width: 800px;
+
+	display: flex;
+
+	padding: 12px 14px;
+
+	border-radius: 36px;
+	background-color: $White;
+
+	&__input {
+		flex: 1 1 0px;
+
+		padding-left: 32px;
+		margin-right: 32px;
+	}
+
+	&__btn {
+		padding: 34px 86px;
+	}
+}
+
+//* == Foooter ==
+
+.footer {
+	padding-bottom: 74px;
+
+	&__container {}
+
+	&__common-links {}
 }
